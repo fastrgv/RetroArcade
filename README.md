@@ -1,4 +1,8 @@
 
+Download all source code & resources in the following 7-zip file:
+
+https://github.com/fastrgv/RetroArcade/releases/download/v2.6.0/ret15nov22.7z
+
 
 
 # RetroArcade
