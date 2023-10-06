@@ -11,7 +11,10 @@ https://github.com/fastrgv/RetroArcade/releases/download/v2.6.0/ret15nov22.7z
 
 
 
-# RetroArcade
+
+
+
+# RetroArcade -- old-school arcade games with sound
 
 	* SpaceInvaders 
 	* Frogger
@@ -21,9 +24,15 @@ https://github.com/fastrgv/RetroArcade/releases/download/v2.6.0/ret15nov22.7z
 ## What's new:
 
 
+**ver 2.6.1 -- 06oct2023**
+
+* Restored OSX build for the command line (without a bundle) .
+
+
+
 **ver 2.6.0 -- 15nov2022**
 
-* Initial spinoff of RetroArcade (from coterminalapps).
+* Initial spinoff from coterminalapps strictly for retro-arcade fans.
 
 
 
@@ -31,7 +40,7 @@ https://github.com/fastrgv/RetroArcade/releases/download/v2.6.0/ret15nov22.7z
 ===============================================================
 ## Introduction
 
-RetroArcade is a highly portable collection of ASCII arcade games with sound that run in a commandline terminal on Windows and Gnu/Linux. Includes SpaceInvaders, Pacman & Frogger. Includes full source code.
+RetroArcade is a highly portable collection of ASCII arcade games with sound that run in a commandline terminal on Windows, OSX, and most any Linux distro. Includes SpaceInvaders, Pacman & Frogger. Includes full source code.
 
 -----------------------------------------------------------
 Featuring
@@ -46,7 +55,7 @@ The 7zip command to extract the archive and maintain the directory structure is 
 
 * Windows versions use runtime-priority control for arcade-level response.
 
-Rebuildable using the free GNU Ada compiler, even on OSX.
+Rebuildable using the free GNU Ada compiler.
 
 Includes 3 retro arcade games: SpaceInvaders, Pacman, Frogger.
 
@@ -66,7 +75,7 @@ Can be called directly from the command line; e.g.
 but it is more convenient to use the selector app, thusly:
 
 * winArcade.bat		(Win64)
-* gnuArcade.sh		(linux)
+* gnuArcade.sh			(linux)
 
 Use the keyboard arrow keys to highlight the desired game, then press the (enter)-key.
 
@@ -76,14 +85,19 @@ Use the keyboard arrow keys to highlight the desired game, then press the (enter
 
 
 ### For Maximal Enjoyment...
-Keyboard setup can be very important for playability.  You should have a very short key-delay and fast repeat rate setting when running the arcade games.
 
-Screen setup is important, too. Terminal sizes required:
+Proper keyboard setup is essential for playability.  **You must have a very short key-delay and fast repeat rate setting when running these arcade games.**
+
+Another option on OSX or linux is "nice": eg: "nice -20 cinv". But key delay is most important.
+Reminder: Windows versions use runtime-priority control for arcade-level response.
+
+Screen & font size is important, too...
+**Terminal sizes required:**
 * pacman:	60x40
 * frogger:	56x21
 * Invaders:	80x30
 
-It is recommended to resize your terminal window, per the above table; then enlarge the font until the window just barely fits your computer screen.
+Resize your terminal window, per the above table; then enlarge the font until the window just barely fits your computer screen.
 
 ===========================================================================
 
@@ -98,8 +112,6 @@ Pacman, is a kid friendly ascii character version of Pacman that plays in a comm
 
 Now with runtime-priority control to prevent terminal freezes on Windows, plus commandline control of gamespeed & ghostspeed.
 
-Runs on Windows, OSX & Linux.
-
 Keyboard setup is important.  You should have a short key-delay and fast repeat setting.  
 
 The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys quit;  (p) pauses game.
@@ -111,7 +123,7 @@ When run directly, cpac can be given 2 optional command line parameters:
 	* game speed 0..9; 0=slow, 5=default=medium, 9=fast;
 	* ghost speed 0..9; 0=stopped, 2=default=easy, 9=fast.
 
-If you want to try non-default values for these params, you need to run directly from the directory of the executable. To do this: "cd bin/gnu" or "cd bin/osx" or "cd bin\win", first.
+If you want to try non-default values for these params, you need to run directly from the directory of the executable. To do this: "cd bin/gnu" or "cd bin\win", first.
 
 Before running cpac, it is recommended to resize your terminal to 60 chars. wide by 40 lines tall; then, perhaps, enlarge the font.
 
@@ -126,7 +138,6 @@ Terminal frogger is a kid friendly ascii character version of Frogger that plays
 * TTT is a truck, 
 * ccc is a car.
 
-Runs on Windows, OSX & Linux.
 
 Keyboard setup is important.  You should have a short key-delay and fast repeat setting.
 
@@ -145,11 +156,16 @@ Before running cfrog, it is recommended to resize your terminal to 56 chars. wid
 RetroArcade is a stand-alone application.
 Ncurses is NOT needed; there are no prerequisites.
 
-Mac users see "osx-setup.txt".
+Mac/OSX users see "osx-setup.txt".
 Windows users see "windows-setup.txt".
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
-The proper command to extract the archive and maintain the directory structure is "7z x filename".
+Unzip the archive.  
+
+* On Linux & Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
+
+* On OSX, the command-line for Keka works thusly:
+	* /Applications/Keka.app/Contents/MacOS/Keka --cli 7z x (filename.7z)
+
 
 Open a commandline terminal, and cd to the game directory.
 
@@ -171,19 +187,17 @@ To launch the game selector App, depending on your system, type:
 Note that any individual app may still be executed from the directory appropriate to your O.S.  For example, on Windows you can CD to bin\win\ and then type "cfrog" to run Frogger.
 
 
+**If an older Linux system complains that /dev/dsp/ cannot be opened, prepend the command with "padsp",EG:  "padsp (ExeName)".**
+ 
 
 
 
 ===========================================================================
 ## Compiler Scripts
-There are 3 scripts, winbuildall.bat for Windows, lbuildall.sh for Linux, and obuildall.sh for OS-X.  They differ in where the executables are put.  With so many different precompiled binaries for each OS, there would be too much clutter if they were all put into the same place, particularly since windows needs colocated DLLs.
+There are 3 scripts, winbuildall.bat for Windows, obuildall for OSX, & lbuildall.sh for Linux.  They differ in where the executables are put.  With so many different precompiled binaries for each OS, there would be too much clutter if they were all put into the same place, particularly since windows needs colocated DLLs.
 
 These build scripts work for GNU Ada [with its own g++].
 See ./alternateBuildScripts/ for more examples.
-
-The latest scripts have elliminated the need to use the "gnatcoll" library simply by compiling from source 3 additional tiny files, a small subset of gnatcoll, that are actually used.
-
-Final note:  the latest OSX script does not use Xcode, only GNU Ada & GNU g++.
 
 ==========================================================================
 ## Build Instructions:
@@ -213,7 +227,7 @@ There are NO other 3rd party libraries or tools required to build.
 ## What is special about this project?...freedom...portability
 
 * uses the Ada programming language and the freely-available GNU compiler.
-* runs on Macs running OSX, or PCs running Windows or Linux;
+* runs on PCs or laptops running Windows, OSX, or Linux;
 * uses only free open source software [F.O.S.S] tools & libraries;
 * portable, transparent code, easy to modify, rebuild;
 * uses a cross-platform implementation of OpenAL-Audio, adaptable by any Ada application that needs sounds & music-loops with a simple interface.
@@ -232,7 +246,7 @@ fastrgv@gmail.com
 
 RetroArcade is covered by the GNU GPL v3 as indicated in the sources:
 
- Copyright (C) 2022  <fastrgv@gmail.com>
+ Copyright (C) 2023  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -282,8 +296,13 @@ It is my intention to use media with copyrights or licenses that are compatible 
 * https://gamejolt.com/@fastrgv/games
 
 
-Utube Space Invaders Video:
-https://www.youtube.com/watch?v=dMA4xA4mqII&t=26s
+
+--------------------------------------------------
+## Some Earlier Revision History:
+
+
+
+
 
 --------------------------------------------------
 ## Some Earlier Revision History:
