@@ -29,6 +29,10 @@ https://github.com/fastrgv/RetroArcade/releases/download/v2.6.1/arc6oct23.7z
 
 ## What's new:
 
+**ver 2.6.2 -- 13oct2023**
+
+* Added warning in case window is too small for chosen game.
+
 
 **ver 2.6.1 -- 06oct2023**
 
