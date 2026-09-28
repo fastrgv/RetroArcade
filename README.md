@@ -33,6 +33,7 @@ https://sourceforge.net/projects/retroarcade/files/latest/download
 
 **ver 2.6.4 -- 28sep2026**
 
+* Improved colors in space-invaders, frogger.
 * Improved keystroke handling functions.
 * Arrow-Keys now work on all systems.
 * Minor color changes to pacman, frogger.
