@@ -4,7 +4,7 @@
 
 ### Download all source code, resources & binaries in the following 7-zip file:
 
-https://github.com/fastrgv/RetroArcade/releases/download/v2.6.4/ar28sep26.7z
+https://github.com/fastrgv/RetroArcade/releases/download/v2.6.5/arc01oct26.7z
 
 
 * On OSX, Keka works well for 7Z files. The command-line for Keka is:
