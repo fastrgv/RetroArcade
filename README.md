@@ -30,6 +30,11 @@ https://sourceforge.net/projects/retroarcade/files/latest/download
 
 ## What's new:
 
+**ver 2.6.5 -- 1oct2026**
+
+* Improved key response for space-invaders on most platforms.
+* Extremely improved key response for pacman on all platforms.
+
 
 **ver 2.6.4 -- 28sep2026**
 
